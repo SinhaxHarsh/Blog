@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-80qp6d#%rn&2=sdgf4-$06vy6ifmwiz#*qrxswjfmr2%44ni1f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
+
 
 
 # Application definition
@@ -50,7 +51,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'blog.cust_mid.AdminAccessControlMiddleware',
 ]
 
 ROOT_URLCONF = 'prime.urls'
