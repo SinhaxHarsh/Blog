@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Using Minty theme for a fresh color palette -->
+	<link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.min.css">
+
+	<!-- Custom CSS for additional styling -->
+	<style>
+	/* Body Background */
+	body {
+		background-color: #f5f5f5;
+		font-family: 'Arial', sans-serif;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh; /* Make the body take the full height of the viewport */
+	}
+
+	/* Custom navbar style */
+	.navbar {
+		background-color: #28a745;
+		}
+
+		.navbar a {
+			color: white !important;
+			font-weight: bold;
+		}
+
+		/* Content area styling */
+		.container {
+			margin-top: 50px;
+			flex-grow: 1; /* Allow content area to expand and fill the available space */
+		}
+
+		/* Card styling */
+		.card {
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.card-header {
+			background-color: #28a745;
+			color: white;
+			font-size: 1.25rem;
+			font-weight: bold;
+		}
+
+		.card-body {
+			padding: 20px;
+		}
+
+		/* Footer styling */
+		footer {
+			background-color: #343a40;
+			color: white;
+			text-align: center;
+			padding: 10px 0;
+			width: 100%;
+		}
+
+		/* Button styling */
+		.btn-custom {
+			background-color: #28a745;
+			color: white;
+			border-radius: 20px;
+			padding: 10px 20px;
+			font-weight: bold;
+		}
+
+		.btn-custom:hover {
+			background-color: #218838;
+		}
+	</style>
+
+	<title>Portfolio-cum-Blog</title>
+</head>
+<body>
+
+	<!-- Include Navbar -->
+	{% include 'blog/nav.html' %}
+
+	<div class="container">
+		{% block content %}
+		<!-- Example content, feel free to add more content here -->
+		<div class="row">
+			<div class="col-md-8">
+				<div class="card">
+					<div class="card-header">
+						Blog Post Title
+					</div>
+					<div class="card-body">
+						<p>This is an example blog post content. You can replace this with actual content.</p>
+						<a href="#" class="btn btn-custom">Read more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endblock %}
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<p>© 2025 SINHA All rights reserved.</p>
+	</footer>
+
+	<!-- Bootstrap and Ionicons Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

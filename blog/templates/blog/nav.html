@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'index' %}" style="font-weight: bold; font-size: 1.5rem;">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'featured' %}" style="font-weight: bold;">Featured</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}" style="font-weight: bold;">About</a>
+        </li>
+      </ul>
+
+      <!-- Search Form -->
+      <form class="d-flex" action="{% url 'search' %}" method="GET">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{ request.GET.q }}">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+
+      <ul class="navbar-nav">
+        {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'sign-out' %}" style="font-weight: bold;">Sign Out</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signin' %}" style="font-weight: bold;">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}" style="font-weight: bold;">Sign Up</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
